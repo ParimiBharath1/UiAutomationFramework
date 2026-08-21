@@ -12,6 +12,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
+import UiAutomationFramework.UiAutomationFrameworkSeleniumDesign.LandingPage;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class StandAloneTest {
@@ -21,12 +22,15 @@ public class StandAloneTest {
 		
 		String productName = "ZARA COAT 3";
 		WebDriverManager.chromedriver().setup();
-		
+ 		
 		WebDriver driver = new ChromeDriver();		
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		driver.manage().window().maximize();
 		
+		
 		driver.get("https://rahulshettyacademy.com/client/");
+		
+	
 		
 		driver.findElement(By.id("userEmail")).sendKeys("parimibharath225@gmail.com");
 		driver.findElement(By.id("userPassword")).sendKeys("Learn@123");
