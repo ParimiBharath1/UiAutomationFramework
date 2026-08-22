@@ -8,13 +8,14 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import com.Ui.TestComponents.BaseTest;
+import com.Ui.TestComponents.Retry;
 
 import UiAutomationFramework.UiAutomationFrameworkSeleniumDesign.CartPage;
 import UiAutomationFramework.UiAutomationFrameworkSeleniumDesign.ProductCatalouge;
 
 public class ErrorValidationsTest extends BaseTest{
 	
-	@Test
+	@Test(groups= {"ErrorHandling"},retryAnalyzer=Retry.class)
 	public void LoginErrorValidation() throws IOException, InterruptedException {
 
 	

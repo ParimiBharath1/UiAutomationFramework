@@ -16,8 +16,8 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.edge.EdgeDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
@@ -43,7 +43,7 @@ public class BaseTest {
 		prop.load(fis);
 		
 		String browserName = System.getProperty("browser")!=null ? System.getProperty("browser") :prop.getProperty("browser");
-		//prop.getProperty("browser");
+		//System.out.println(prop.getProperty("browser"));
 
 		if (browserName.contains("chrome")) {
 			ChromeOptions options = new ChromeOptions();
@@ -116,8 +116,9 @@ public class BaseTest {
 	}
 	
 	@AfterMethod(alwaysRun=true)	
-	public void tearDown()
+	public void tearDown() throws InterruptedException
 	{
+		Thread.sleep(2000L);
 		driver.close();
 	}
 	
